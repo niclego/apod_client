@@ -14,9 +14,9 @@ struct ActionButtonsView: View {
     
     var body: some View {
         VStack {
-            ApodActionButton(systemName: "heart.fill", text: String(likes))
+            ApodActionButton(systemName: "star.fill", text: String(likes))
             ApodActionButton(systemName: "text.bubble.fill", text: String(comments))
-            ApodActionButton(systemName: "arrowshape.turn.up.right.fill", text: String(shares))
+//            ApodActionButton(systemName: "arrowshape.turn.up.right.fill", text: String(shares))
         }
         .frame(
             minWidth: 0,

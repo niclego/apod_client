@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ExplanationView: View {
     let explanation: String
+    let copyright: String
+
     @Binding var showExplanation: Bool
     
     var body: some View {
@@ -28,25 +30,67 @@ struct ExplanationView: View {
                         .font(.title3.weight(.bold))
                 })
             }
-            .padding(.top, 8)
+            .padding(.top, 10)
             .padding(.bottom, 4)
+            .padding(.horizontal, 10)
+
             
 
             
             ScrollView(.vertical) {
                 Text(explanation)
                     .font(.body.weight(.bold))
+                    .padding(.horizontal, 10)
+                
+
+                if !copyright.isEmpty {
+                    HStack {
+                        Button(action: {}, label: {
+                            Text("📷 ©\(copyright)")
+                                .foregroundColor(.white)
+                                .font(.footnote.weight(.bold))
+                                .padding(.vertical, 10)
+                        })
+
+                        Spacer()
+                    }
+                    .padding(.horizontal, 10)
+                }
+                
+                HStack {
+                    Text("More Like this:")
+                        .font(.footnote.weight(.bold))
+                        .padding(.bottom, 10)
+
+                    Spacer()
+                }
+                .padding(.horizontal, 10)
+
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(0..<7, content: {_ in
+                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                                Color.white.opacity(0.6)
+                                    .frame(width: 80, height: 128)
+                                    .cornerRadius(10)
+                            })
+                        })
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.bottom, 16)
+                }
             }
+            
+
+
 
         }
         .foregroundColor(.white)
-        .padding(.bottom, 16)
-        .padding(.horizontal, 16)
         .background(Color.black.opacity(0.6))
         .cornerRadius(10)
         .transition(.move(edge: .bottom))
         .frame(
-            maxHeight: 572,
             alignment: .bottomLeading
         )
     }

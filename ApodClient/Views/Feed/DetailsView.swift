@@ -10,29 +10,41 @@ import SwiftUI
 struct DetailsView: View {
     let title: String
     let formatedDate: String
-    let copyright: String
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 1995, month: 6, day: 16)
+        return calendar.date(from:startComponents)!
+            ...
+            Date()
+    }()
+    
+    @State var selectedDate = Date()
+    
+    @Binding var showExplanation: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(formatedDate)
-                .font(.title3.weight(.bold))
-                .foregroundColor(.white)
-                .padding(6)
+            DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                .labelsHidden()
+                .accentColor(.gray)
                 .background(Color.black.opacity(0.6))
                 .cornerRadius(10)
-            Text(title)
-                .font(.title.weight(.bold))
-                .foregroundColor(.white)
-                .padding(6)
-                .background(Color.black.opacity(0.6))
-                .cornerRadius(10)
-            if !copyright.isEmpty {
-                Text("© \(copyright)")
-                    .foregroundColor(.white.opacity(0.9))
-                    .padding(6)
+
+            
+            Button(action: {
+                withAnimation {
+                    showExplanation.toggle()
+                }
+            }) {
+                Text(title)
+                    .font(.title2.weight(.bold))
+                    .foregroundColor(.white)
+                    .padding(10)
                     .background(Color.black.opacity(0.6))
                     .cornerRadius(10)
             }
+            
+
         }
         .padding()
     }

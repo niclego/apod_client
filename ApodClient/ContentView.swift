@@ -9,16 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @State var showApod = true
+    @State var showExplanation = false
 
     var body: some View {
         ZStack {
             if (showApod) {
-                FeedView(feedType: "APOD")
+                FeedView(feedType: "APOD", showExplanation: $showExplanation)
             } else {
-                FeedView(feedType: "Liked")
+                FeedView(feedType: "Liked", showExplanation: $showExplanation)
             }
             
             TopNavigationBar(showApod: $showApod)
+                .blur(radius: showExplanation ? 10 : 0)
+                .animation(.linear(duration: 0.4))
         }
     }
 }

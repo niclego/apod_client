@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct FeedView: View {
-    @State var showExplanation = false
     let feedType: String
     let nasaApod = NasaApod()
+    @Binding var showExplanation: Bool
+
 
     var body: some View {
         ZStack {
@@ -21,17 +22,12 @@ struct FeedView: View {
                     if !showExplanation {
                         ActionButtonsView(likes: nasaApod.likes, comments: nasaApod.comments, shares: nasaApod.shares)
                     }
-                    
-                    Button(action: {
-                        withAnimation {
-                            showExplanation.toggle()
-                        }
-                    }, label: {
-                        DetailsView(title: nasaApod.title, formatedDate: nasaApod.date, copyright: nasaApod.copyright)
-                    })
-                        
+
+                    DetailsView(title: nasaApod.title, formatedDate: nasaApod.date, showExplanation: $showExplanation)
+                        .padding(.bottom, !showExplanation ? 16 : 0)
+
                     if showExplanation {
-                        ExplanationView(explanation: nasaApod.explanation, showExplanation: $showExplanation)
+                        ExplanationView(explanation: nasaApod.explanation, copyright: nasaApod.copyright, showExplanation: $showExplanation)
                     }
                 }
                 .frame(
