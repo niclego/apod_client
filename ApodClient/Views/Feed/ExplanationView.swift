@@ -41,6 +41,7 @@ struct ExplanationView: View {
                 Text(explanation)
                     .font(.body.weight(.bold))
                     .padding(.horizontal, 10)
+                    .padding(.bottom, 10)
                 
 
                 if let copyright = copyright {
@@ -49,7 +50,7 @@ struct ExplanationView: View {
                             Text("© \(copyright)")
                                 .foregroundColor(.gray)
                                 .font(.footnote.weight(.bold))
-                                .padding(.vertical, 10)
+                                .padding(.bottom, 10)
                         })
 
                         Spacer()

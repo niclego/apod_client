@@ -16,7 +16,7 @@ struct BackgroundImage: View {
         WebImage(url: URL(string: self.hdurl))
             .placeholder(Image("Loading").resizable())
             .resizable()
-            .aspectRatio(contentMode: .fill)
+            .aspectRatio(contentMode: .fit)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .ignoresSafeArea()
             .blur(radius: showExplanation ? 10 : 0)

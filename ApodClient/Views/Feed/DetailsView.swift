@@ -36,10 +36,10 @@ struct DetailsView: View {
                 }
             }) {
                 Text(title)
-                    .font(.title2.weight(.bold))
+                    .font(.title.weight(.bold))
                     .foregroundColor(.white)
                     .padding(10)
-                    .background(Color.black.opacity(0.6))
+                    .background(Color.gray.opacity(0.1))
                     .cornerRadius(10)
             }
         }
