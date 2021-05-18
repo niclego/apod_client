@@ -26,8 +26,8 @@ struct DetailsView: View {
             DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
                 .labelsHidden()
 //                .accentColor(.gray)
-                .background(Color.black.opacity(0.6))
-                .cornerRadius(10)
+//                .background(Color.black.opacity(0.6))
+//                .cornerRadius(10)
 
             
             Button(action: {
