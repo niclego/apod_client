@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8222B121265403F100BC545C /* URLSession-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222B120265403F100BC545C /* URLSession-Codable.swift */; };
+		8222B1232654047800BC545C /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222B1222654047800BC545C /* Apod.swift */; };
+		8222B12626540B7300BC545C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8222B12526540B7300BC545C /* SDWebImageSwiftUI */; };
 		827673CC264F1DE100DC816A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673CB264F1DE100DC816A /* ActionButton.swift */; };
-		827673CF264F1E5000DC816A /* NasaApod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673CE264F1E5000DC816A /* NasaApod.swift */; };
 		827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D0264F1FB100DC816A /* BackgroundImage.swift */; };
 		827673D3264F24B600DC816A /* TopNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D2264F24B600DC816A /* TopNavigationButton.swift */; };
 		827673D5264F269400DC816A /* ActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D4264F269400DC816A /* ActionButtonsView.swift */; };
@@ -23,8 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8222B120265403F100BC545C /* URLSession-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession-Codable.swift"; sourceTree = "<group>"; };
+		8222B1222654047800BC545C /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		827673CB264F1DE100DC816A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		827673CE264F1E5000DC816A /* NasaApod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaApod.swift; sourceTree = "<group>"; };
 		827673D0264F1FB100DC816A /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		827673D2264F24B600DC816A /* TopNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationButton.swift; sourceTree = "<group>"; };
 		827673D4264F269400DC816A /* ActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsView.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8222B12626540B7300BC545C /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +67,7 @@
 		827673CD264F1E2E00DC816A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				827673CE264F1E5000DC816A /* NasaApod.swift */,
+				8222B1222654047800BC545C /* Apod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +117,7 @@
 				827673CD264F1E2E00DC816A /* Models */,
 				82CC0ADD26448FAB00EDDC50 /* ApodClientApp.swift */,
 				82CC0ADF26448FAB00EDDC50 /* ContentView.swift */,
+				8222B120265403F100BC545C /* URLSession-Codable.swift */,
 				82CC0AE126448FAB00EDDC50 /* Assets.xcassets */,
 				82CC0AE626448FAB00EDDC50 /* Info.plist */,
 				82CC0AE326448FAB00EDDC50 /* Preview Content */,
@@ -144,6 +149,9 @@
 			dependencies = (
 			);
 			name = ApodClient;
+			packageProductDependencies = (
+				8222B12526540B7300BC545C /* SDWebImageSwiftUI */,
+			);
 			productName = ApodClient;
 			productReference = 82CC0ADA26448FAB00EDDC50 /* ApodClient.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 82CC0AD126448FAB00EDDC50;
+			packageReferences = (
+				8222B12426540B7300BC545C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 82CC0ADB26448FAB00EDDC50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,11 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				827673CF264F1E5000DC816A /* NasaApod.swift in Sources */,
 				827673E2264F38E400DC816A /* TopNavigationBar.swift in Sources */,
 				827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */,
 				827673D5264F269400DC816A /* ActionButtonsView.swift in Sources */,
 				827673CC264F1DE100DC816A /* ActionButton.swift in Sources */,
+				8222B121265403F100BC545C /* URLSession-Codable.swift in Sources */,
+				8222B1232654047800BC545C /* Apod.swift in Sources */,
 				827673D3264F24B600DC816A /* TopNavigationButton.swift in Sources */,
 				827673D7264F285F00DC816A /* DetailsView.swift in Sources */,
 				827673E5264F3B6C00DC816A /* FeedView.swift in Sources */,
@@ -396,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8222B12426540B7300BC545C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8222B12526540B7300BC545C /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8222B12426540B7300BC545C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 82CC0AD226448FAB00EDDC50 /* Project object */;
 }

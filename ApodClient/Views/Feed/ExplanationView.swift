@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExplanationView: View {
     let explanation: String
-    let copyright: String
+    let copyright: String?
 
     @Binding var showExplanation: Bool
     
@@ -43,11 +43,11 @@ struct ExplanationView: View {
                     .padding(.horizontal, 10)
                 
 
-                if !copyright.isEmpty {
+                if let copyright = copyright {
                     HStack {
                         Button(action: {}, label: {
-                            Text("📷 ©\(copyright)")
-                                .foregroundColor(.white)
+                            Text("© \(copyright)")
+                                .foregroundColor(.gray)
                                 .font(.footnote.weight(.bold))
                                 .padding(.vertical, 10)
                         })
@@ -58,8 +58,8 @@ struct ExplanationView: View {
                 }
                 
                 HStack {
-                    Text("More Like this:")
-                        .font(.footnote.weight(.bold))
+                    Text("See Also:")
+                        .font(.title2.weight(.bold))
                         .padding(.bottom, 10)
 
                     Spacer()
@@ -69,16 +69,15 @@ struct ExplanationView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(0..<7, content: {_ in
+                        ForEach(0..<10, content: {_ in
                             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                                 Color.white.opacity(0.6)
-                                    .frame(width: 80, height: 128)
+                                    .frame(width: 86, height: 86)
                                     .cornerRadius(10)
                             })
                         })
                     }
                     .padding(.horizontal, 10)
-                    .padding(.bottom, 16)
                 }
             }
             

@@ -13,10 +13,14 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            Color.black
+                .ignoresSafeArea()
+            
             if (showApod) {
                 FeedView(feedType: "APOD", showExplanation: $showExplanation)
             } else {
-                FeedView(feedType: "Liked", showExplanation: $showExplanation)
+                Color.green
+//                FeedView(feedType: "Liked", showExplanation: $showExplanation)
             }
             
             TopNavigationBar(showApod: $showApod)

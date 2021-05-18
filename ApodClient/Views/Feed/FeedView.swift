@@ -5,25 +5,30 @@
 //  Created by Nicolas Le Gorrec on 5/14/21.
 //
 
+import Combine
 import SwiftUI
 
 struct FeedView: View {
     let feedType: String
-    let nasaApod = NasaApod()
+    
+    @State private var nasaApod = Apod.example
+    @State var selectedDate = Date()
+    @State private var request: AnyCancellable?
+
     @Binding var showExplanation: Bool
 
 
     var body: some View {
         ZStack {
-            BackgroundImage(imageName: feedType == "APOD" ? "APOD2" : "APOD1", showExplanation: showExplanation)
+            BackgroundImage(hdurl: nasaApod.hdurl, showExplanation: showExplanation)
 
             VStack {
                 VStack(alignment: .leading) {
                     if !showExplanation {
-                        ActionButtonsView(likes: nasaApod.likes, comments: nasaApod.comments, shares: nasaApod.shares)
+                        ActionButtonsView(likes: nasaApod.likes, comments: nasaApod.comments)
                     }
 
-                    DetailsView(title: nasaApod.title, formatedDate: nasaApod.date, showExplanation: $showExplanation)
+                    DetailsView(title: nasaApod.title, selectedDate: $selectedDate, showExplanation: $showExplanation)
                         .padding(.bottom, !showExplanation ? 16 : 0)
 
                     if showExplanation {
@@ -36,6 +41,20 @@ struct FeedView: View {
                 )
                 .edgesIgnoringSafeArea(.bottom)
             }
+        }
+        .onChange(of: selectedDate, perform: apodQuery)
+    }
+    
+    func apodQuery(criteria: Date) {
+        request?.cancel()
+
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyy-MM-dd"
+
+        let path = formatter1.string(from: criteria)
+        
+        request = URLSession.shared.get(path: path, queryItems: [:], defaultValue: Apod.example) { item in
+            nasaApod = item
         }
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DetailsView: View {
     let title: String
-    let formatedDate: String
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 1995, month: 6, day: 16)
@@ -18,7 +17,7 @@ struct DetailsView: View {
             Date()
     }()
     
-    @State var selectedDate = Date()
+    @Binding var selectedDate: Date
     
     @Binding var showExplanation: Bool
     
@@ -26,7 +25,7 @@ struct DetailsView: View {
         VStack(alignment: .leading) {
             DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
                 .labelsHidden()
-                .accentColor(.gray)
+//                .accentColor(.gray)
                 .background(Color.black.opacity(0.6))
                 .cornerRadius(10)
 
@@ -43,8 +42,6 @@ struct DetailsView: View {
                     .background(Color.black.opacity(0.6))
                     .cornerRadius(10)
             }
-            
-
         }
         .padding()
     }

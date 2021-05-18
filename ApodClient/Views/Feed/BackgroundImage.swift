@@ -5,14 +5,16 @@
 //  Created by Nicolas Le Gorrec on 5/14/21.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
 
 struct BackgroundImage: View {
-    let imageName: String
+    let hdurl: String
     let showExplanation: Bool
     
     var body: some View {
-        Image(self.imageName)
+        WebImage(url: URL(string: self.hdurl))
+            .placeholder(Image("Loading").resizable())
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
