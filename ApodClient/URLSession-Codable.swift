@@ -36,7 +36,7 @@ extension URLSession {
     }
     
     func get<T: Decodable>(path: String, queryItems: [String: String] = [:], defaultValue: T, completion: @escaping (T) -> Void) -> AnyCancellable? {
-        guard let components = URLComponents(string: "https://we046wmwwi.execute-api.us-east-2.amazonaws.com/develop/apodQuery/NASA/\(path)") else {
+        guard let components = URLComponents(string: "https://we046wmwwi.execute-api.us-east-2.amazonaws.com/develop/\(path)") else {
             return nil
         }
         

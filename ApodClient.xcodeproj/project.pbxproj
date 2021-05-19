@@ -10,6 +10,8 @@
 		8222B121265403F100BC545C /* URLSession-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222B120265403F100BC545C /* URLSession-Codable.swift */; };
 		8222B1232654047800BC545C /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222B1222654047800BC545C /* Apod.swift */; };
 		8222B12626540B7300BC545C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8222B12526540B7300BC545C /* SDWebImageSwiftUI */; };
+		8234DCB02654AF16009B882F /* SeeAlsoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234DCAF2654AF16009B882F /* SeeAlsoView.swift */; };
+		8234DCB22654B5B3009B882F /* SeeAlsoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234DCB12654B5B3009B882F /* SeeAlsoCell.swift */; };
 		827673CC264F1DE100DC816A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673CB264F1DE100DC816A /* ActionButton.swift */; };
 		827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D0264F1FB100DC816A /* BackgroundImage.swift */; };
 		827673D3264F24B600DC816A /* TopNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D2264F24B600DC816A /* TopNavigationButton.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		8222B120265403F100BC545C /* URLSession-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession-Codable.swift"; sourceTree = "<group>"; };
 		8222B1222654047800BC545C /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
+		8234DCAF2654AF16009B882F /* SeeAlsoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAlsoView.swift; sourceTree = "<group>"; };
+		8234DCB12654B5B3009B882F /* SeeAlsoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAlsoCell.swift; sourceTree = "<group>"; };
 		827673CB264F1DE100DC816A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		827673D0264F1FB100DC816A /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		827673D2264F24B600DC816A /* TopNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationButton.swift; sourceTree = "<group>"; };
@@ -55,11 +59,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8234DCAE2654AEF7009B882F /* Liked */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Liked;
+			sourceTree = "<group>";
+		};
 		827673CA264F1DA500DC816A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				827673E0264F38C800DC816A /* TopNavigation */,
 				827673E3264F3B2F00DC816A /* Feed */,
+				8234DCAE2654AEF7009B882F /* Liked */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -87,6 +99,8 @@
 				827673E4264F3B6C00DC816A /* FeedView.swift */,
 				827673D0264F1FB100DC816A /* BackgroundImage.swift */,
 				827673D6264F285F00DC816A /* DetailsView.swift */,
+				8234DCAF2654AF16009B882F /* SeeAlsoView.swift */,
+				8234DCB12654B5B3009B882F /* SeeAlsoCell.swift */,
 				827673D8264F296F00DC816A /* ExplanationView.swift */,
 				827673D4264F269400DC816A /* ActionButtonsView.swift */,
 				827673CB264F1DE100DC816A /* ActionButton.swift */,
@@ -209,10 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				827673E2264F38E400DC816A /* TopNavigationBar.swift in Sources */,
+				8234DCB02654AF16009B882F /* SeeAlsoView.swift in Sources */,
 				827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */,
 				827673D5264F269400DC816A /* ActionButtonsView.swift in Sources */,
 				827673CC264F1DE100DC816A /* ActionButton.swift in Sources */,
 				8222B121265403F100BC545C /* URLSession-Codable.swift in Sources */,
+				8234DCB22654B5B3009B882F /* SeeAlsoCell.swift in Sources */,
 				8222B1232654047800BC545C /* Apod.swift in Sources */,
 				827673D3264F24B600DC816A /* TopNavigationButton.swift in Sources */,
 				827673D7264F285F00DC816A /* DetailsView.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 struct ExplanationView: View {
     let explanation: String
     let copyright: String?
+    let date: String
 
     @Binding var showExplanation: Bool
     
@@ -58,36 +59,11 @@ struct ExplanationView: View {
                     .padding(.horizontal, 10)
                 }
                 
-                HStack {
-                    Text("See Also:")
-                        .font(.title2.weight(.bold))
-                        .padding(.bottom, 10)
-
-                    Spacer()
-                }
-                .padding(.horizontal, 10)
-
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<10, content: {_ in
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                                Color.white.opacity(0.6)
-                                    .frame(width: 86, height: 86)
-                                    .cornerRadius(10)
-                            })
-                        })
-                    }
-                    .padding(.horizontal, 10)
-                }
+                SeeAlsoView(date: date)
             }
-            
-
-
-
         }
         .foregroundColor(.white)
-        .background(Color.black.opacity(0.6))
+        .background(Color.gray.opacity(0.2))
         .cornerRadius(10)
         .transition(.move(edge: .bottom))
         .frame(

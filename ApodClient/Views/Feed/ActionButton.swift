@@ -18,12 +18,9 @@ struct ApodActionButton: View {
             VStack {
                 Image(systemName: systemName)
                     .foregroundColor(.white)
-                    .font(.title)
-                Text(text)
-                    .foregroundColor(.white)
-                    .font(.footnote.weight(.bold))
+                    .font(.title3)
+                    .padding(.bottom, 7)
             }
         }
-        .padding(6)
     }
 }

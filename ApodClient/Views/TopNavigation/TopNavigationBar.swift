@@ -11,20 +11,24 @@ struct TopNavigationBar: View {
     @Binding var showApod: Bool
     
     var body: some View {
-        VStack {
-            HStack {
-                TopNavigationButton(label: "Feed", enabled: showApod) {
-                    withAnimation {
-                        showApod = true
+        ZStack {
+            VStack {
+                HStack {
+                    TopNavigationButton(label: "Feed", enabled: showApod) {
+                        withAnimation {
+                            showApod = true
+                        }
+                    }
+                    TopNavigationButton(label: "Liked", enabled: !showApod) {
+                        withAnimation {
+                            showApod = false
+                        }
                     }
                 }
-                TopNavigationButton(label: "Liked", enabled: !showApod) {
-                    withAnimation {
-                        showApod = false
-                    }
-                }
+                
+                Spacer()
             }
-            Spacer()
         }
+        .transition(.move(edge: .top))
     }
 }

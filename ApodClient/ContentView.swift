@@ -15,17 +15,11 @@ struct ContentView: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            
             if (showApod) {
-                FeedView(feedType: "APOD", showExplanation: $showExplanation)
+                FeedView(showExplanation: $showExplanation, showApod: $showApod)
             } else {
-                Color.green
-//                FeedView(feedType: "Liked", showExplanation: $showExplanation)
+                Color.red
             }
-            
-            TopNavigationBar(showApod: $showApod)
-                .blur(radius: showExplanation ? 10 : 0)
-                .animation(.linear(duration: 0.4))
         }
     }
 }

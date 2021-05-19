@@ -13,18 +13,12 @@ struct ActionButtonsView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                ApodActionButton(systemName: "star.fill", text: String(likes))
-                ApodActionButton(systemName: "text.bubble.fill", text: String(comments))
-            }
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(10)
+            ApodActionButton(systemName: "star", text: String(likes))
+            ApodActionButton(systemName: "text.bubble", text: String(comments))
         }
-        .frame(
-            minWidth: 0,
-            maxWidth: .infinity,
-            alignment: .trailing
-        )
+        .padding(10)
+        .background(Color.gray.opacity(0.1))
+        .cornerRadius(10)
         .transition(.move(edge: .trailing))
     }
 }
