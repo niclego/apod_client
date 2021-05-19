@@ -10,10 +10,6 @@ import SwiftUI
 
 struct SeeAlsoView: View {
     let date: String
-    var formatedDate: String {
-        let components = date.components(separatedBy: "-")
-        return components[0] + "-" + components[1]
-    }
     
     @State private var searchResults = SearchResults(items: [])
     @State private var request: AnyCancellable?
@@ -47,7 +43,7 @@ struct SeeAlsoView: View {
     func runSearch() {
         request?.cancel()
 
-        request = URLSession.shared.get(path: "apod/NASA/\(formatedDate)", defaultValue: SearchResults(items: [])) { items in
+        request = URLSession.shared.get(path: "seeAlso/NASA/\(date)", defaultValue: SearchResults(items: [])) { items in
             searchResults = items
         }
     }

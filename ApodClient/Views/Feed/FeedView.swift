@@ -85,7 +85,7 @@ struct FeedView: View {
         let formatter1 = DateFormatter()
         formatter1.dateFormat = "yyyy-MM-dd"
 
-        let path = "apodQuery/NASA/" + formatter1.string(from: criteria)
+        let path = "apod/NASA/" + formatter1.string(from: criteria)
         
         request = URLSession.shared.get(path: path, queryItems: [:], defaultValue: Apod.example) { item in
             apod = item
