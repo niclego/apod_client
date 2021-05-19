@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct DetailsView: View {
-    let title: String
-    let likes: Int
-    let comments: Int
+    @ObservedObject var apodObj: ApodObj
+
+    @Binding var showExplanation: Bool
+    @Binding var selectedDate: Date
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -19,10 +20,7 @@ struct DetailsView: View {
             ...
             Date()
     }()
-    
-    @Binding var selectedDate: Date
-    @Binding var showExplanation: Bool
-    
+        
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -30,8 +28,6 @@ struct DetailsView: View {
                     DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
                         .labelsHidden()
                         .accentColor(.gray)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(10)
                 }
                         
                 Button(action: {
@@ -39,20 +35,20 @@ struct DetailsView: View {
                         showExplanation.toggle()
                     }
                 }) {
-                    Text(title)
+                    Text(apodObj.apod.title)
                         .font(.title2.weight(.bold))
                         .foregroundColor(.white)
                         .padding(10)
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.black.opacity(0.6))
                         .cornerRadius(10)
                 }
             }
             Spacer()
             if !showExplanation {
-                ActionButtonsView(likes: likes, comments: comments)
+                ActionButtonsView(likes: apodObj.apod.likes, comments: apodObj.apod.comments)
             }
         }
         .padding(16)
-        .padding(.bottom, !showExplanation ? 16 : 0)
+        .padding(.bottom, true ? 16 : 0)
     }
 }

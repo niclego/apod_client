@@ -8,25 +8,19 @@
 import SwiftUI
 
 struct TopNavigationBar: View {
-    @Binding var showApod: Bool
-    
+    @Binding var feedView: Bool
+
     var body: some View {
-        ZStack {
-            VStack {
-                HStack {
-                    TopNavigationButton(label: "Feed", enabled: showApod) {
-                        withAnimation {
-                            showApod = true
-                        }
-                    }
-                    TopNavigationButton(label: "Liked", enabled: !showApod) {
-                        withAnimation {
-                            showApod = false
-                        }
-                    }
+        HStack {
+            TopNavigationButton(label: "Feed", enabled: feedView) {
+                withAnimation {
+                    feedView = true
                 }
-                
-                Spacer()
+            }
+            TopNavigationButton(label: "Liked", enabled: !feedView) {
+                withAnimation {
+                    feedView = false
+                }
             }
         }
         .transition(.move(edge: .top))

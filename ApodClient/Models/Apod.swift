@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Apod: Decodable, Identifiable {
+struct Apod: Codable, Identifiable {
     let type: String
     let id: String
     let title: String

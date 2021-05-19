@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct ExplanationView: View {
-    let explanation: String
-    let copyright: String?
-    let date: String
-
+    @ObservedObject var apodObj: ApodObj
     @Binding var showExplanation: Bool
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -39,13 +36,13 @@ struct ExplanationView: View {
 
             
             ScrollView(.vertical) {
-                Text(explanation)
+                Text(apodObj.apod.explanation)
                     .font(.body.weight(.bold))
                     .padding(.horizontal, 10)
                     .padding(.bottom, 10)
                 
 
-                if let copyright = copyright {
+                if let copyright = apodObj.apod.copyright {
                     HStack {
                         Button(action: {}, label: {
                             Text("© \(copyright)")
@@ -59,15 +56,17 @@ struct ExplanationView: View {
                     .padding(.horizontal, 10)
                 }
                 
-                SeeAlsoView(date: date)
+                SeeAlsoView(apodObj: apodObj)
             }
         }
         .foregroundColor(.white)
-        .background(Color.gray.opacity(0.2))
+        .background(Color.black.opacity(0.6))
         .cornerRadius(10)
         .transition(.move(edge: .bottom))
         .frame(
+            maxHeight: .infinity,
             alignment: .bottomLeading
         )
+        .edgesIgnoringSafeArea(.bottom)
     }
 }

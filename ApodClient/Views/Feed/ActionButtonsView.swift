@@ -17,7 +17,7 @@ struct ActionButtonsView: View {
             ApodActionButton(systemName: "text.bubble", text: String(comments))
         }
         .padding(10)
-        .background(Color.gray.opacity(0.1))
+        .background(Color.black.opacity(0.6))
         .cornerRadius(10)
         .transition(.move(edge: .trailing))
     }

@@ -9,15 +9,14 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct BackgroundImage: View {
-    let path: String
+    @ObservedObject var apodObj: ApodObj
     let showExplanation: Bool
-    let expanded: Bool
-    
+
     var body: some View {
-        WebImage(url: URL(string: self.path))
+        WebImage(url: URL(string: self.apodObj.apod.hdurl ?? self.apodObj.apod.url))
             .placeholder(Image("Loading").resizable())
             .resizable()
-            .aspectRatio(contentMode: expanded ? .fill : .fit)
+            .aspectRatio(contentMode: apodObj.imageIsExpanded ? .fill : .fit)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .ignoresSafeArea()
             .blur(radius: showExplanation ? 10 : 0)

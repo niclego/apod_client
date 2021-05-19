@@ -9,8 +9,7 @@ import Combine
 import SwiftUI
 
 struct SeeAlsoView: View {
-    let date: String
-    
+    @ObservedObject var apodObj: ApodObj
     @State private var searchResults = SearchResults(items: [])
     @State private var request: AnyCancellable?
     
@@ -43,14 +42,14 @@ struct SeeAlsoView: View {
     func runSearch() {
         request?.cancel()
 
-        request = URLSession.shared.get(path: "seeAlso/NASA/\(date)", defaultValue: SearchResults(items: [])) { items in
+        request = URLSession.shared.get(path: "seeAlso/NASA/\(apodObj.apod.id)", defaultValue: SearchResults(items: [])) { items in
             searchResults = items
         }
     }
 }
 
-struct LikedView_Previews: PreviewProvider {
-    static var previews: some View {
-        SeeAlsoView(date: "2021-05")
-    }
-}
+//struct LikedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SeeAlsoView(date: "2021-05")
+//    }
+//}
