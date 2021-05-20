@@ -9,21 +9,19 @@ import SwiftUI
 
 struct HUDView: View {
     @ObservedObject var apodObj: ApodObj
-    
     @Binding var feedView: Bool
     @Binding var selectedDate: Date
-    @Binding var showExplanation: Bool
     
     var body: some View {
         VStack {
-            if (!showExplanation) {
+            if (!apodObj.showExplanation) {
                 TopNavigationBar(feedView: $feedView)
                 MagnificationButtonView(apodObj: apodObj)
             }
             Spacer()
-            DetailsView(apodObj: apodObj, showExplanation: $showExplanation, selectedDate: $selectedDate)
-            if (showExplanation) {
-                ExplanationView(apodObj: apodObj, showExplanation: $showExplanation)
+            DetailsView(apodObj: apodObj, selectedDate: $selectedDate)
+            if (apodObj.showExplanation) {
+                ExplanationView(apodObj: apodObj)
             }
         }
     }

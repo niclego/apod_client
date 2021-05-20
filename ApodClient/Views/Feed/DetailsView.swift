@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DetailsView: View {
     @ObservedObject var apodObj: ApodObj
-
-    @Binding var showExplanation: Bool
     @Binding var selectedDate: Date
     
     let dateRange: ClosedRange<Date> = {
@@ -27,12 +25,12 @@ struct DetailsView: View {
                 HStack {
                     DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
                         .labelsHidden()
-                        .accentColor(.gray)
+                        .accentColor(.white)
                 }
                         
                 Button(action: {
                     withAnimation {
-                        showExplanation.toggle()
+                        apodObj.showExplanation.toggle()
                     }
                 }) {
                     Text(apodObj.apod.title)
@@ -44,7 +42,7 @@ struct DetailsView: View {
                 }
             }
             Spacer()
-            if !showExplanation {
+            if !apodObj.showExplanation {
                 ActionButtonsView(likes: apodObj.apod.likes, comments: apodObj.apod.comments)
             }
         }

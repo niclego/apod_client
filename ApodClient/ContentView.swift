@@ -11,6 +11,7 @@ import SwiftUI
 class ApodObj: ObservableObject {
     @Published var apod = Apod.example
     @Published var imageIsExpanded = false
+    @Published var showExplanation = false
 }
 
 struct ContentView: View {
@@ -18,7 +19,6 @@ struct ContentView: View {
     @State private var feedView = true
     @State private var selectedDate = Date()
     @State private var request: AnyCancellable?
-    @State private var showExplanation = false
     
     var body: some View {
         ZStack {
@@ -26,7 +26,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             if (feedView) {
-                FeedView(apodObj: self.apodObj, showExplanation: showExplanation)
+                FeedView(apodObj: self.apodObj)
             } else {
                 Color.red
             }
@@ -34,8 +34,7 @@ struct ContentView: View {
             HUDView(
                 apodObj: apodObj,
                 feedView: $feedView,
-                selectedDate: $selectedDate,
-                showExplanation: $showExplanation
+                selectedDate: $selectedDate
             )
         }
         .onChange(of: selectedDate, perform: apodQuery)

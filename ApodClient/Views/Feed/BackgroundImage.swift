@@ -10,7 +10,6 @@ import SwiftUI
 
 struct BackgroundImage: View {
     @ObservedObject var apodObj: ApodObj
-    let showExplanation: Bool
 
     var body: some View {
         WebImage(url: URL(string: self.apodObj.apod.hdurl ?? self.apodObj.apod.url))
@@ -19,7 +18,7 @@ struct BackgroundImage: View {
             .aspectRatio(contentMode: apodObj.imageIsExpanded ? .fill : .fit)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .ignoresSafeArea()
-            .blur(radius: showExplanation ? 10 : 0)
+            .blur(radius: apodObj.showExplanation ? 10 : 0)
             .animation(.linear(duration: 0.4))
     }
     

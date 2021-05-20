@@ -9,12 +9,11 @@ import SwiftUI
 
 struct FeedView: View {
     @ObservedObject var apodObj: ApodObj
-    @State var showExplanation: Bool
 
     var body: some View {
         ZStack {
             if (apodObj.apod.apodType == "imageType") {
-                BackgroundImage(apodObj: apodObj, showExplanation: false)
+                BackgroundImage(apodObj: apodObj)
             } else {
                 Color.black
             }

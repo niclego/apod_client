@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExplanationView: View {
     @ObservedObject var apodObj: ApodObj
-    @Binding var showExplanation: Bool
 
     var body: some View {
         VStack {
@@ -20,7 +19,7 @@ struct ExplanationView: View {
                 Spacer()
                 Button(action: {
                     withAnimation {
-                        showExplanation.toggle()
+                        apodObj.showExplanation.toggle()
                     }
                 }, label: {
                     Image(systemName: "xmark.circle.fill")
