@@ -20,7 +20,7 @@
 		827673D5264F269400DC816A /* ActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D4264F269400DC816A /* ActionButtonsView.swift */; };
 		827673D7264F285F00DC816A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D6264F285F00DC816A /* DetailsView.swift */; };
 		827673D9264F296F00DC816A /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D8264F296F00DC816A /* ExplanationView.swift */; };
-		827673E2264F38E400DC816A /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673E1264F38E400DC816A /* TopNavigationBar.swift */; };
+		827673E2264F38E400DC816A /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673E1264F38E400DC816A /* TopNavigationView.swift */; };
 		827673E5264F3B6C00DC816A /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673E4264F3B6C00DC816A /* FeedView.swift */; };
 		82CC0ADE26448FAB00EDDC50 /* ApodClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC0ADD26448FAB00EDDC50 /* ApodClientApp.swift */; };
 		82CC0AE026448FAB00EDDC50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC0ADF26448FAB00EDDC50 /* ContentView.swift */; };
@@ -41,7 +41,7 @@
 		827673D4264F269400DC816A /* ActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsView.swift; sourceTree = "<group>"; };
 		827673D6264F285F00DC816A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		827673D8264F296F00DC816A /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
-		827673E1264F38E400DC816A /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
+		827673E1264F38E400DC816A /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
 		827673E4264F3B6C00DC816A /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		82CC0ADA26448FAB00EDDC50 /* ApodClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApodClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CC0ADD26448FAB00EDDC50 /* ApodClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodClientApp.swift; sourceTree = "<group>"; };
@@ -73,8 +73,6 @@
 		825B789C26576F8B00D5E30F /* HUD */ = {
 			isa = PBXGroup;
 			children = (
-				822290242655880800D3BB03 /* HUDView.swift */,
-				82229026265588B100D3BB03 /* MagnificationButtonView.swift */,
 				827673E0264F38C800DC816A /* TopNavigation */,
 				825B789E2657702500D5E30F /* Details */,
 				825B789D26576FD000D5E30F /* Explanation */,
@@ -106,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				825B789C26576F8B00D5E30F /* HUD */,
+				82229026265588B100D3BB03 /* MagnificationButtonView.swift */,
+				822290242655880800D3BB03 /* HUDView.swift */,
 				827673E3264F3B2F00DC816A /* Feed */,
 				8234DCAE2654AEF7009B882F /* Liked */,
 			);
@@ -123,7 +123,7 @@
 		827673E0264F38C800DC816A /* TopNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				827673E1264F38E400DC816A /* TopNavigationBar.swift */,
+				827673E1264F38E400DC816A /* TopNavigationView.swift */,
 				827673D2264F24B600DC816A /* TopNavigationButton.swift */,
 			);
 			path = TopNavigation;
@@ -252,7 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				827673E2264F38E400DC816A /* TopNavigationBar.swift in Sources */,
+				827673E2264F38E400DC816A /* TopNavigationView.swift in Sources */,
 				8234DCB02654AF16009B882F /* SeeAlsoView.swift in Sources */,
 				827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */,
 				822290252655880800D3BB03 /* HUDView.swift in Sources */,

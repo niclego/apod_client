@@ -10,8 +10,9 @@ import SwiftUI
 
 class ApodObj: ObservableObject {
     @Published var apod = Apod.example
-    @Published var imageIsExpanded = false
+    @Published var imageIsExpanded = true
     @Published var showExplanation = false
+    @Published var showComments = false
 }
 
 struct ContentView: View {

@@ -15,7 +15,7 @@ struct HUDView: View {
     var body: some View {
         VStack {
             if (!apodObj.showExplanation) {
-                TopNavigationBar(feedView: $feedView)
+                TopNavigationView(feedView: $feedView)
                 MagnificationButtonView(apodObj: apodObj)
             }
             

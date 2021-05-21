@@ -19,13 +19,13 @@ struct SeeAlsoCell: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: 86, height: 86)
-                    .cornerRadius(10)
+                    .cornerRadius(15)
             } else {
                 Image("NoPoster")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 86, height: 86)
-                    .cornerRadius(10)
+                    .cornerRadius(15)
             }
         }
     }

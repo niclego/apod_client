@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct TopNavigationBar: View {
+struct TopNavigationView: View {
     @Binding var feedView: Bool
 
     var body: some View {
         HStack {
+            TopNavigationButton(label: "Browse", enabled: !feedView) {
+                withAnimation {
+                    feedView = false
+                }
+            }
+            
             TopNavigationButton(label: "Feed", enabled: feedView) {
                 withAnimation {
                     feedView = true
-                }
-            }
-            TopNavigationButton(label: "Liked", enabled: !feedView) {
-                withAnimation {
-                    feedView = false
                 }
             }
         }

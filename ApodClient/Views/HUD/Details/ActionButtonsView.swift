@@ -8,17 +8,37 @@
 import SwiftUI
 
 struct ActionButtonsView: View {
-    let likes: Int
-    let comments: Int
+    @ObservedObject var apodObj: ApodObj
     
     var body: some View {
         VStack {
-            ApodActionButton(systemName: "star", text: String(likes))
-            ApodActionButton(systemName: "text.bubble", text: String(comments))
+            ActionButton(apodObj: apodObj, systemName: "star") {
+                print("hello")
+            }
+            ActionButton(apodObj: apodObj, systemName: "text.bubble", onPress: onCommentsPress)
         }
         .padding(10)
         .background(Color.black.opacity(0.6))
-        .cornerRadius(10)
+        .cornerRadius(15)
         .transition(.move(edge: .trailing))
+    }
+    
+    func onCommentsPress() {
+        if (!apodObj.showExplanation) {
+            withAnimation {
+                apodObj.showExplanation = true
+                apodObj.showComments = true
+            }
+        } else {
+            if (!apodObj.showComments) {
+                withAnimation {
+                    apodObj.showComments = true
+                }
+            } else {
+                withAnimation {
+                    apodObj.showExplanation = false
+                }
+            }
+        }
     }
 }

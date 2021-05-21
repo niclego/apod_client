@@ -7,19 +7,21 @@
 
 import SwiftUI
 
-struct ApodActionButton: View {
+struct ActionButton: View {
+    @ObservedObject var apodObj: ApodObj
+
     var systemName: String
-    var text: String
-    
+    let onPress: () -> Void
+
     var body: some View {
         Button(action: {
-            print("hello")
+            onPress()
         }) {
             VStack {
                 Image(systemName: systemName)
                     .foregroundColor(.white)
-                    .font(.title3)
-                    .padding(.bottom, 7)
+                    .font(.title2.weight(.bold))
+                    .padding(.bottom, 4)
             }
         }
     }

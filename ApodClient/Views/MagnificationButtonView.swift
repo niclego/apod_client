@@ -16,19 +16,19 @@ struct MagnificationButtonView: View {
             Button(action: {
                 apodObj.imageIsExpanded.toggle()
             }) {
-                if (!apodObj.imageIsExpanded) {
+                if (apodObj.imageIsExpanded) {
                     Image(systemName: "rectangle.expand.vertical")
                         .foregroundColor(.white)
-                        .font(.title3)
+                        .font(.title2.weight(.bold))
                 } else {
                     Image(systemName: "rectangle.compress.vertical")
                         .foregroundColor(.white)
-                        .font(.title3)
+                        .font(.title2.weight(.bold))
                 }
             }
             .padding(10)
             .background(Color.black.opacity(0.6))
-            .cornerRadius(10)
+            .cornerRadius(15)
         }
         .padding(.trailing, 16)
         .transition(.move(edge: .trailing))

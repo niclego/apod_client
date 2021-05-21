@@ -20,33 +20,43 @@ struct DetailsView: View {
     }()
         
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
-                    .labelsHidden()
-                    .accentColor(.white)
-                        
+        VStack(alignment: .leading) {
+            DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                .labelsHidden()
+                .accentColor(.white)
+            
+            HStack(alignment: .bottom) {
                 Button(action: {
                     withAnimation {
-                        apodObj.showExplanation.toggle()
+                        if (!apodObj.showExplanation) {
+                            withAnimation {
+                                apodObj.showExplanation = true
+                                apodObj.showComments = false
+                            }
+                        } else {
+                            withAnimation {
+                                apodObj.showExplanation = false
+                            }
+                        }
                     }
                 }) {
                     Text(apodObj.apod.title)
-                        .font(.title2.weight(.bold))
+                        .font(.title.weight(.bold))
                         .foregroundColor(.white)
                         .padding(10)
                         .background(Color.black.opacity(0.6))
-                        .cornerRadius(10)
+                        .cornerRadius(15)
                 }
+                
+                Spacer()
+
+                ActionButtonsView(apodObj: apodObj)
+                
             }
             
-            Spacer()
-            
-            if !apodObj.showExplanation {
-                ActionButtonsView(likes: apodObj.apod.likes, comments: apodObj.apod.comments)
-            }
         }
         .padding(16)
         .padding(.bottom, true ? 16 : 0)
+        
     }
 }
