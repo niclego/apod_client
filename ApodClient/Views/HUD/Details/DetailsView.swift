@@ -22,11 +22,9 @@ struct DetailsView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                HStack {
-                    DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
-                        .labelsHidden()
-                        .accentColor(.white)
-                }
+                DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                    .labelsHidden()
+                    .accentColor(.white)
                         
                 Button(action: {
                     withAnimation {
@@ -41,7 +39,9 @@ struct DetailsView: View {
                         .cornerRadius(10)
                 }
             }
+            
             Spacer()
+            
             if !apodObj.showExplanation {
                 ActionButtonsView(likes: apodObj.apod.likes, comments: apodObj.apod.comments)
             }

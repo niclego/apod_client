@@ -18,7 +18,9 @@ struct HUDView: View {
                 TopNavigationBar(feedView: $feedView)
                 MagnificationButtonView(apodObj: apodObj)
             }
+            
             Spacer()
+            
             DetailsView(apodObj: apodObj, selectedDate: $selectedDate)
             if (apodObj.showExplanation) {
                 ExplanationView(apodObj: apodObj)
