@@ -87,12 +87,23 @@ struct ExplanationView: View {
                 ScrollView(.vertical) {
                     ForEach(1..<20) { index in
                         HStack {
-                            Text("Comment \(index)")
+                            VStack(alignment: .leading) {
+                                Text("Username\(index)")
+                                    .font(.footnote.weight(.bold))
+                                    .padding(.bottom, 1)
+
+                                Text("comments context")
+                            }
+
                             Spacer()
+//                            Button(action: {}, label: {
+//                                Image(systemName: "heart")
+//                            })
                         }
-                        .padding(10)
-                        .background(Color.white.opacity(0.6))
-                        .cornerRadius(15)                    }
+                        .padding(.horizontal, 10)
+                        .padding(.bottom, 10)
+                        .cornerRadius(15)
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 10)
