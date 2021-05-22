@@ -14,12 +14,14 @@
 		8222B12626540B7300BC545C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8222B12526540B7300BC545C /* SDWebImageSwiftUI */; };
 		8234DCB02654AF16009B882F /* SeeAlsoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234DCAF2654AF16009B882F /* SeeAlsoView.swift */; };
 		8234DCB22654B5B3009B882F /* SeeAlsoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234DCB12654B5B3009B882F /* SeeAlsoCell.swift */; };
+		82557ADD2657FB9D00184320 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82557ADC2657FB9D00184320 /* ExplanationView.swift */; };
+		82557ADF2657FC2700184320 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82557ADE2657FC2700184320 /* CommentsView.swift */; };
 		827673CC264F1DE100DC816A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673CB264F1DE100DC816A /* ActionButton.swift */; };
 		827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D0264F1FB100DC816A /* BackgroundImage.swift */; };
 		827673D3264F24B600DC816A /* TopNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D2264F24B600DC816A /* TopNavigationButton.swift */; };
 		827673D5264F269400DC816A /* ActionButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D4264F269400DC816A /* ActionButtonsView.swift */; };
 		827673D7264F285F00DC816A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D6264F285F00DC816A /* DetailsView.swift */; };
-		827673D9264F296F00DC816A /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D8264F296F00DC816A /* ExplanationView.swift */; };
+		827673D9264F296F00DC816A /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673D8264F296F00DC816A /* MoreDetailsView.swift */; };
 		827673E2264F38E400DC816A /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673E1264F38E400DC816A /* TopNavigationView.swift */; };
 		827673E5264F3B6C00DC816A /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827673E4264F3B6C00DC816A /* FeedView.swift */; };
 		82CC0ADE26448FAB00EDDC50 /* ApodClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC0ADD26448FAB00EDDC50 /* ApodClientApp.swift */; };
@@ -35,12 +37,14 @@
 		8222B1222654047800BC545C /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		8234DCAF2654AF16009B882F /* SeeAlsoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAlsoView.swift; sourceTree = "<group>"; };
 		8234DCB12654B5B3009B882F /* SeeAlsoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAlsoCell.swift; sourceTree = "<group>"; };
+		82557ADC2657FB9D00184320 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		82557ADE2657FC2700184320 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		827673CB264F1DE100DC816A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		827673D0264F1FB100DC816A /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
 		827673D2264F24B600DC816A /* TopNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationButton.swift; sourceTree = "<group>"; };
 		827673D4264F269400DC816A /* ActionButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonsView.swift; sourceTree = "<group>"; };
 		827673D6264F285F00DC816A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
-		827673D8264F296F00DC816A /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		827673D8264F296F00DC816A /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
 		827673E1264F38E400DC816A /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
 		827673E4264F3B6C00DC816A /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		82CC0ADA26448FAB00EDDC50 /* ApodClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApodClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,19 +79,21 @@
 			children = (
 				827673E0264F38C800DC816A /* TopNavigation */,
 				825B789E2657702500D5E30F /* Details */,
-				825B789D26576FD000D5E30F /* Explanation */,
+				825B789D26576FD000D5E30F /* MoreDetails */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
 		};
-		825B789D26576FD000D5E30F /* Explanation */ = {
+		825B789D26576FD000D5E30F /* MoreDetails */ = {
 			isa = PBXGroup;
 			children = (
-				827673D8264F296F00DC816A /* ExplanationView.swift */,
+				827673D8264F296F00DC816A /* MoreDetailsView.swift */,
+				82557ADC2657FB9D00184320 /* ExplanationView.swift */,
 				8234DCAF2654AF16009B882F /* SeeAlsoView.swift */,
 				8234DCB12654B5B3009B882F /* SeeAlsoCell.swift */,
+				82557ADE2657FC2700184320 /* CommentsView.swift */,
 			);
-			path = Explanation;
+			path = MoreDetails;
 			sourceTree = "<group>";
 		};
 		825B789E2657702500D5E30F /* Details */ = {
@@ -254,6 +260,7 @@
 			files = (
 				827673E2264F38E400DC816A /* TopNavigationView.swift in Sources */,
 				8234DCB02654AF16009B882F /* SeeAlsoView.swift in Sources */,
+				82557ADF2657FC2700184320 /* CommentsView.swift in Sources */,
 				827673D1264F1FB100DC816A /* BackgroundImage.swift in Sources */,
 				822290252655880800D3BB03 /* HUDView.swift in Sources */,
 				827673D5264F269400DC816A /* ActionButtonsView.swift in Sources */,
@@ -265,7 +272,8 @@
 				827673D3264F24B600DC816A /* TopNavigationButton.swift in Sources */,
 				827673D7264F285F00DC816A /* DetailsView.swift in Sources */,
 				827673E5264F3B6C00DC816A /* FeedView.swift in Sources */,
-				827673D9264F296F00DC816A /* ExplanationView.swift in Sources */,
+				827673D9264F296F00DC816A /* MoreDetailsView.swift in Sources */,
+				82557ADD2657FB9D00184320 /* ExplanationView.swift in Sources */,
 				82CC0AE026448FAB00EDDC50 /* ContentView.swift in Sources */,
 				82CC0ADE26448FAB00EDDC50 /* ApodClientApp.swift in Sources */,
 			);

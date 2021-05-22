@@ -12,7 +12,8 @@ struct SeeAlsoView: View {
     @ObservedObject var apodObj: ApodObj
     @State private var searchResults = SearchResults(items: [])
     @State private var request: AnyCancellable?
-    
+    @Binding var selectedDate: Date
+
     var body: some View {
         VStack {
             if !searchResults.items.isEmpty {
@@ -23,18 +24,21 @@ struct SeeAlsoView: View {
                     
                     Spacer()
                 }
-                .padding(.horizontal, 10)
+                .padding(.horizontal, 20)
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(searchResults.items, content: SeeAlsoCell.init)
                     }
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 20)
                 }
-                .padding(.bottom, 24)
+                .padding(.bottom, 34)
             }
         }
         .onAppear {
+            runSearch()
+        }
+        .onChange(of: selectedDate.description) { s in
             runSearch()
         }
     }

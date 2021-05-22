@@ -23,7 +23,7 @@ struct HUDView: View {
             
             DetailsView(apodObj: apodObj, selectedDate: $selectedDate)
             if (apodObj.showExplanation) {
-                ExplanationView(apodObj: apodObj)
+                MoreDetailsView(apodObj: apodObj, selectedDate: $selectedDate)
             }
         }
     }

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct ExplanationView: View {
+struct MoreDetailsView: View {
     @ObservedObject var apodObj: ApodObj
+    @Binding var selectedDate: Date
 
     var body: some View {
         VStack {
@@ -60,53 +61,9 @@ struct ExplanationView: View {
             
 
             if !apodObj.showComments {
-                ScrollView(.vertical) {
-                    Text(apodObj.apod.explanation)
-                        .font(.body.weight(.bold))
-                        .padding(.horizontal, 10)
-                        .padding(.bottom, 10)
-                    
-
-                    if let copyright = apodObj.apod.copyright {
-                        HStack {
-                            Button(action: {}, label: {
-                                Text("© \(copyright)")
-                                    .foregroundColor(.gray)
-                                    .font(.footnote.weight(.bold))
-                                    .padding(.bottom, 10)
-                            })
-
-                            Spacer()
-                        }
-                        .padding(.horizontal, 10)
-                    }
-                    
-                    SeeAlsoView(apodObj: apodObj)
-                }
+                ExplanationView(apodObj: apodObj, selectedDate: $selectedDate)
             } else {
-                ScrollView(.vertical) {
-                    ForEach(1..<20) { index in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("Username\(index)")
-                                    .font(.footnote.weight(.bold))
-                                    .padding(.bottom, 1)
-
-                                Text("comments context")
-                            }
-
-                            Spacer()
-//                            Button(action: {}, label: {
-//                                Image(systemName: "heart")
-//                            })
-                        }
-                        .padding(.horizontal, 10)
-                        .padding(.bottom, 10)
-                        .cornerRadius(15)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 10)
+                CommentsView()
             }
         }
         .foregroundColor(.white)
