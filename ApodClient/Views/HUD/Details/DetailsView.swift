@@ -40,7 +40,7 @@ struct DetailsView: View {
                         }
                     }
                 }) {
-                    Text(apodObj.apod.title)
+                    Text(apodObj.apod.title ?? "")
                         .font(.title.weight(.bold))
                         .foregroundColor(.white)
                         .padding(10)

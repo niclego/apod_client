@@ -31,7 +31,7 @@ struct MoreDetailsView: View {
                             apodObj.showComments = true
                         }
                     }, label: {
-                        Text("Comments (\(apodObj.apod.comments))")
+                        Text("Comments (\(apodObj.apod.comments ?? 0))")
                             .font(.footnote.weight(.bold))
                             .foregroundColor(apodObj.showComments ? .white : .white.opacity(0.5))
                     })

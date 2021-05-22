@@ -10,13 +10,13 @@ import Foundation
 struct Apod: Codable, Identifiable {
     let type: String
     let id: String
-    let title: String
-    let explanation: String
+    let title: String?
+    let explanation: String?
     let hdurl: String?
     let url: String
     let copyright: String?
-    let likes: Int
-    let comments: Int
+    let likes: Int?
+    let comments: Int?
     
     var formatedDate: String {
         let dateFormatter = DateFormatter()
