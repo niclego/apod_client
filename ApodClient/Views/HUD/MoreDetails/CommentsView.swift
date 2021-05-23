@@ -5,38 +5,22 @@
 //  Created by Nicolas Le Gorrec on 5/21/21.
 //
 
+import Combine
 import SwiftUI
 
 struct CommentsView: View {
+    let typeDate: String
+    
+    @State private var searchResults = CommentSearchResults(items: [])
+    @State private var request: AnyCancellable?
+    @Binding var selectedDate: Date
+    
     @State var commentText = ""
+    
     var body: some View {
         VStack(spacing: 0) {
             ScrollView(.vertical) {
-                ForEach(1..<20) { index in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("@username\(index)")
-                                    .font(.footnote.weight(.bold))
-                                    .padding(.bottom, 1)
-                                Text("1h")
-                                    .foregroundColor(.white.opacity(0.5))
-                                    .font(.footnote)
-                                    .padding(.bottom, 1)
-                            }
-                            
-                            Text("comments context")
-                        }
-                        Spacer()
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 5)
-                    .cornerRadius(15)
-                    Rectangle()
-                        .fill(Color.black.opacity(0.2))
-                        .frame(maxWidth: .infinity, maxHeight: 1)
-
-                }
+                ForEach(searchResults.items, content: CommentCell.init)
             }
             .frame(maxWidth: .infinity)
 
@@ -52,7 +36,7 @@ struct CommentsView: View {
                 .cornerRadius(15)
 
                 Button(action: {}, label: {
-                    Image(systemName: "paperplane")
+                    Image(systemName: "paperplane.circle")
                 })
             }
             .frame(maxWidth: .infinity)
@@ -62,11 +46,29 @@ struct CommentsView: View {
             .padding(.horizontal, 10)
             .background(Color.black.opacity(0.2))
         }
+        .onAppear {
+            fetchComments(criteria: selectedDate)
+        }
+        .onChange(of: selectedDate, perform: fetchComments)
+    }
+    
+    func fetchComments(criteria: Date) {
+        request?.cancel()
+        
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyy-MM-dd"
+        
+        let path = "comments/NASA/" + formatter1.string(from: criteria)
+        print(path)
+        
+        request = URLSession.shared.get(path: path, queryItems: [:], defaultValue: CommentSearchResults(items: [])) { items in
+            searchResults = items
+        }
     }
 }
 
-struct CommentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentsView()
-    }
-}
+//struct CommentsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommentsView(typeDate: "NASA#2021-05-07")
+//    }
+//}

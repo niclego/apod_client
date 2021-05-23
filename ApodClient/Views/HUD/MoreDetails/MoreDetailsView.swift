@@ -55,7 +55,7 @@ struct MoreDetailsView: View {
                 }
                 .padding(.top, 16)
                 .padding(.bottom, 4)
-                .padding(.horizontal, 10)
+                .padding(.horizontal, 17)
             }
 
             
@@ -63,7 +63,7 @@ struct MoreDetailsView: View {
             if !apodObj.showComments {
                 ExplanationView(apodObj: apodObj, selectedDate: $selectedDate)
             } else {
-                CommentsView()
+                CommentsView(typeDate: apodObj.apod.id, selectedDate: $selectedDate)
             }
         }
         .foregroundColor(.white)

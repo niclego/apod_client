@@ -12,10 +12,10 @@ struct ActionButtonsView: View {
     
     var body: some View {
         VStack {
-            ActionButton(apodObj: apodObj, systemName: "star") {
+            ActionButton(apodObj: apodObj, systemName: "heart") {
                 print("hello")
             }
-            ActionButton(apodObj: apodObj, systemName: "text.bubble", onPress: onCommentsPress)
+            ActionButton(apodObj: apodObj, systemName: "ellipsis.bubble", onPress: onCommentsPress)
         }
         .padding(10)
         .background(Color.black.opacity(0.6))

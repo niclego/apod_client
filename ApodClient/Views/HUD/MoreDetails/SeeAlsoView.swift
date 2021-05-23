@@ -36,17 +36,21 @@ struct SeeAlsoView: View {
             }
         }
         .onAppear {
-            runSearch()
+            runSearch(criteria: selectedDate)
         }
-        .onChange(of: selectedDate.description) { s in
-            runSearch()
-        }
+        .onChange(of: selectedDate, perform: runSearch)
+
     }
     
-    func runSearch() {
+    func runSearch(criteria: Date) {
         request?.cancel()
+        
+        let formatter1 = DateFormatter()
+        formatter1.dateFormat = "yyyy-MM-dd"
+        
+        let path = "seeAlso/NASA/" + formatter1.string(from: criteria)
 
-        request = URLSession.shared.get(path: "seeAlso/NASA/\(apodObj.apod.id)", defaultValue: SearchResults(items: [])) { items in
+        request = URLSession.shared.get(path: path, defaultValue: SearchResults(items: [])) { items in
             searchResults = items
         }
     }

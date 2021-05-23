@@ -20,12 +20,13 @@ struct DetailsView: View {
     }()
         
     var body: some View {
-        VStack(alignment: .leading) {
-            DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
-                .labelsHidden()
-                .accentColor(.white)
-            
-            HStack(alignment: .bottom) {
+        HStack(alignment: .bottom) {
+            VStack(alignment: .leading) {
+                    DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                        .labelsHidden()
+                        .accentColor(.white)
+
+
                 Button(action: {
                     withAnimation {
                         if (!apodObj.showExplanation) {
@@ -47,12 +48,12 @@ struct DetailsView: View {
                         .background(Color.black.opacity(0.6))
                         .cornerRadius(15)
                 }
-                
-                Spacer()
-
-                ActionButtonsView(apodObj: apodObj)
-                
             }
+
+            
+            Spacer()
+
+            ActionButtonsView(apodObj: apodObj)
             
         }
         .padding(16)
