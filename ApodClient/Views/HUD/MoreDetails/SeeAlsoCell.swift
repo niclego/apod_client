@@ -31,7 +31,7 @@ struct SeeAlsoCell: View {
     }
     
     var body: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {}, label: {
             posterImage
         })
     }

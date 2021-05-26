@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ExplanationView: View {
     @ObservedObject var apodObj: ApodObj
-    @Binding var selectedDate: Date
 
     var body: some View {
         ScrollView(.vertical) {
@@ -33,7 +32,7 @@ struct ExplanationView: View {
                 .padding(.horizontal, 20)
             }
             
-            SeeAlsoView(apodObj: apodObj, selectedDate: $selectedDate)
+            SeeAlsoView(selectedDate: $apodObj.selectedDate)
         }
     }
 }

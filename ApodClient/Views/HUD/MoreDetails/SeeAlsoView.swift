@@ -9,9 +9,9 @@ import Combine
 import SwiftUI
 
 struct SeeAlsoView: View {
-    @ObservedObject var apodObj: ApodObj
     @State private var searchResults = SearchResults(items: [])
     @State private var request: AnyCancellable?
+    
     @Binding var selectedDate: Date
 
     var body: some View {

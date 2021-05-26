@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DetailsView: View {
     @ObservedObject var apodObj: ApodObj
-    @Binding var selectedDate: Date
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -22,7 +21,7 @@ struct DetailsView: View {
     var body: some View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading) {
-                    DatePicker("", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                DatePicker("", selection: $apodObj.selectedDate, in: dateRange, displayedComponents: .date)
                         .labelsHidden()
                         .accentColor(.white)
 

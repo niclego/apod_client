@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct MagnificationButtonView: View {
-    @ObservedObject var apodObj: ApodObj
+    @Binding var imageIsExpanded: Bool
 
     var body: some View {
         HStack {
             Spacer()
             Button(action: {
-                apodObj.imageIsExpanded.toggle()
+                imageIsExpanded.toggle()
             }) {
-                if (apodObj.imageIsExpanded) {
+                if (imageIsExpanded) {
                     Image(systemName: "rectangle.expand.vertical")
                         .foregroundColor(.white)
                         .font(.title2.weight(.bold))

@@ -10,15 +10,16 @@ import SwiftUI
 
 class ApodObj: ObservableObject {
     @Published var apod = Apod.example
+    @Published var selectedDate = Date()
     @Published var imageIsExpanded = true
     @Published var showExplanation = false
     @Published var showComments = false
+    @Published var feedView = true
 }
 
 struct ContentView: View {
-    @StateObject var apodObj = ApodObj()
-    @State private var feedView = true
-    @State private var selectedDate = Date()
+    @ObservedObject var apodObj = ApodObj()
+    
     @State private var request: AnyCancellable?
     
     var body: some View {
@@ -26,21 +27,17 @@ struct ContentView: View {
             Color.black
                 .ignoresSafeArea()
             
-            if (feedView) {
-                FeedView(apodObj: self.apodObj)
+            if (apodObj.feedView) {
+                FeedView(apodObj: apodObj)
             } else {
                 Color.red
             }
             
-            HUDView(
-                apodObj: apodObj,
-                feedView: $feedView,
-                selectedDate: $selectedDate
-            )
+            HUDView(apodObj: apodObj)
         }
-        .onChange(of: selectedDate, perform: apodQuery)
+        .onChange(of: apodObj.selectedDate, perform: apodQuery)
         .onAppear {
-            apodQuery(criteria: selectedDate)
+            apodQuery(criteria: apodObj.selectedDate)
         }
     }
     

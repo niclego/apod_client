@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ActionButton: View {
-    @ObservedObject var apodObj: ApodObj
-
     var systemName: String
     let onPress: () -> Void
 

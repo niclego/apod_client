@@ -9,12 +9,10 @@ import Combine
 import SwiftUI
 
 struct CommentsView: View {
-    let typeDate: String
-    
+    @ObservedObject var apodObj: ApodObj
+
     @State private var searchResults = CommentSearchResults(items: [])
     @State private var request: AnyCancellable?
-    @Binding var selectedDate: Date
-    
     @State var commentText = ""
     
     var body: some View {
@@ -35,7 +33,9 @@ struct CommentsView: View {
                 .background(Color.black.opacity(0.2))
                 .cornerRadius(15)
 
-                Button(action: {}, label: {
+                Button(action: {
+                    postComment()
+                }, label: {
                     Image(systemName: "paperplane.circle")
                 })
             }
@@ -47,9 +47,9 @@ struct CommentsView: View {
             .background(Color.black.opacity(0.2))
         }
         .onAppear {
-            fetchComments(criteria: selectedDate)
+            fetchComments(criteria: apodObj.selectedDate)
         }
-        .onChange(of: selectedDate, perform: fetchComments)
+        .onChange(of: apodObj.selectedDate, perform: fetchComments)
     }
     
     func fetchComments(criteria: Date) {
@@ -64,6 +64,14 @@ struct CommentsView: View {
         request = URLSession.shared.get(path: path, queryItems: [:], defaultValue: CommentSearchResults(items: [])) { items in
             searchResults = items
         }
+    }
+    
+    func postComment() {
+        let c = Comment(id: 0, type: "NASA#2021-05-07", commentText: "Hello World", author: "nlegorrec", likes: 0)
+        var comments = searchResults.items
+        comments.append(c)
+        let newResults = CommentSearchResults(items: comments)
+        searchResults = newResults
     }
 }
 

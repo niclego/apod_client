@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MoreDetailsView: View {
     @ObservedObject var apodObj: ApodObj
-    @Binding var selectedDate: Date
 
     var body: some View {
         VStack {
@@ -61,9 +60,9 @@ struct MoreDetailsView: View {
             
 
             if !apodObj.showComments {
-                ExplanationView(apodObj: apodObj, selectedDate: $selectedDate)
+                ExplanationView(apodObj: apodObj)
             } else {
-                CommentsView(typeDate: apodObj.apod.id, selectedDate: $selectedDate)
+                CommentsView(apodObj: apodObj)
             }
         }
         .foregroundColor(.white)
