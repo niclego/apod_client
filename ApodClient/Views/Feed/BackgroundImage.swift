@@ -13,7 +13,7 @@ struct BackgroundImage: View {
 
     var body: some View {
         WebImage(url: URL(string: self.apodObj.apod.hdurl ?? self.apodObj.apod.url))
-            .placeholder(Image("Loading").resizable())
+            .placeholder(Image(systemName: "arrow.triangle.2.circlepath"))
             .resizable()
             .aspectRatio(contentMode: apodObj.imageIsExpanded ? .fill : .fit)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)

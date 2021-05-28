@@ -12,7 +12,7 @@ struct CommentCell: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            Image(systemName: "u.circle")
+            Image(systemName: "b.circle")
                 .font(.title2)
             
             VStack(alignment: .leading) {

@@ -30,7 +30,7 @@ struct ContentView: View {
             if (apodObj.feedView) {
                 FeedView(apodObj: apodObj)
             } else {
-                Color.red
+                Image(systemName: "arrow.triangle.2.circlepath").foregroundColor(.white)
             }
             
             HUDView(apodObj: apodObj)

@@ -17,7 +17,7 @@ struct SeeAlsoCell: View {
         Group {
             if let path = apod.hdurl ?? apod.url {
                 WebImage(url: URL(string: path))
-                    .placeholder(Image("Loading").resizable())
+                    .placeholder(Image(systemName: "arrow.triangle.2.circlepath"))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 86, height: 86)
@@ -35,9 +35,8 @@ struct SeeAlsoCell: View {
     var body: some View {
         Button(action: {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-DD"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             let date = dateFormatter.date(from: apod.id)
-            
             selectedDate = date ?? Date()
             withAnimation {
                 showExplanation = false

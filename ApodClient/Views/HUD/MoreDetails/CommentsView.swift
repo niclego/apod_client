@@ -37,6 +37,7 @@ struct CommentsView: View {
                         }
                     } else {
                         Text("There are no comments yet.")
+                            .font(.footnote)
                     }
                 }
             }
@@ -78,6 +79,7 @@ struct CommentsView: View {
             fetchComments(criteria: apodObj.selectedDate)
         }
         .onChange(of: apodObj.selectedDate, perform: fetchComments)
+        .padding(.bottom, 10)
     }
     
     func scrollTo(with value: ScrollViewProxy) {
