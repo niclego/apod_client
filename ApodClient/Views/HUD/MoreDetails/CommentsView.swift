@@ -27,10 +27,14 @@ struct CommentsView: View {
                                 .id(item.id)
                         }
                         .onChange(of: scrollDown, perform: { s in
+                            print("scroll")
                             withAnimation {
                                 scrollTo(with: scrollView)
                             }
                         })
+                        .onAppear {
+                            scrollTo(with: scrollView)
+                        }
                     } else {
                         Text("There are no comments yet.")
                     }

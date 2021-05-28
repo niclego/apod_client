@@ -34,7 +34,11 @@ struct SeeAlsoCell: View {
     
     var body: some View {
         Button(action: {
-            print(apod.id)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-DD"
+            let date = dateFormatter.date(from: apod.id)
+            
+            selectedDate = date ?? Date()
             withAnimation {
                 showExplanation = false
             }
