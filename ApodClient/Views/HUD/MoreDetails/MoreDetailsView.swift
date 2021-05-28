@@ -67,12 +67,11 @@ struct MoreDetailsView: View {
         }
         .foregroundColor(.white)
         .background(Color.black.opacity(0.6))
-        .cornerRadius(15)
+//        .cornerRadius(15)
         .transition(.move(edge: .bottom))
         .frame(
             maxHeight: .infinity,
             alignment: .bottomLeading
         )
-        .edgesIgnoringSafeArea(.bottom)
     }
 }

@@ -13,6 +13,7 @@ struct SeeAlsoView: View {
     @State private var request: AnyCancellable?
     
     @Binding var selectedDate: Date
+    @Binding var showExplanation: Bool
 
     var body: some View {
         VStack {
@@ -28,7 +29,9 @@ struct SeeAlsoView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(searchResults.items, content: SeeAlsoCell.init)
+                        ForEach(searchResults.items) { item in
+                            SeeAlsoCell(apod: item, selectedDate: $selectedDate, showExplanation: $showExplanation )
+                        }
                     }
                     .padding(.horizontal, 20)
                 }

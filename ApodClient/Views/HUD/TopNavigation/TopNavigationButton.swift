@@ -17,7 +17,7 @@ struct TopNavigationButton: View {
             action()
         }, label: {
             Text(label)
-                .foregroundColor(enabled ? .white : .white.opacity(0.5))
+                .foregroundColor(enabled ? .yellow : .white.opacity(0.5))
                 .font(.title3.weight(.bold))
         })
         .padding(6)

@@ -32,7 +32,7 @@ struct ExplanationView: View {
                 .padding(.horizontal, 20)
             }
             
-            SeeAlsoView(selectedDate: $apodObj.selectedDate)
+            SeeAlsoView(selectedDate: $apodObj.selectedDate, showExplanation: $apodObj.showExplanation)
         }
     }
 }

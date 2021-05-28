@@ -20,7 +20,7 @@ struct CommentCell: View {
                     Text("@\(comment.author)")
                         .font(.footnote.weight(.bold))
                         .padding(.bottom, 1)
-                    Text("1h")
+                    Text("\(comment.date)")
                         .foregroundColor(.white.opacity(0.5))
                         .font(.footnote)
                         .padding(.bottom, 1)

@@ -12,12 +12,12 @@ struct TopNavigationView: View {
 
     var body: some View {
         HStack {
-            TopNavigationButton(label: "Browse", enabled: !feedView) {
-                withAnimation {
-                    feedView = false
-                }
-            }
-            
+//            TopNavigationButton(label: "Browse", enabled: !feedView) {
+//                withAnimation {
+//                    feedView = false
+//                }
+//            }
+//            
             TopNavigationButton(label: "Feed", enabled: feedView) {
                 withAnimation {
                     feedView = true

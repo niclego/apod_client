@@ -23,7 +23,7 @@ struct DetailsView: View {
             VStack(alignment: .leading) {
                 DatePicker("", selection: $apodObj.selectedDate, in: dateRange, displayedComponents: .date)
                         .labelsHidden()
-                        .accentColor(.white)
+                        .accentColor(.yellow)
 
 
                 Button(action: {
@@ -56,5 +56,6 @@ struct DetailsView: View {
             
         }
         .padding(16)
+        .frame(maxWidth: 1200)
     }
 }

@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SeeAlsoCell: View {
     let apod: Apod
+    @Binding var selectedDate: Date
+    @Binding var showExplanation: Bool
 
     var posterImage: some View {
         Group {
@@ -31,15 +33,20 @@ struct SeeAlsoCell: View {
     }
     
     var body: some View {
-        Button(action: {}, label: {
+        Button(action: {
+            print(apod.id)
+            withAnimation {
+                showExplanation = false
+            }
+        }, label: {
             posterImage
         })
     }
     
 }
 
-struct SeeAlsoCell_Previews: PreviewProvider {
-    static var previews: some View {
-        SeeAlsoCell(apod: Apod.example)
-    }
-}
+//struct SeeAlsoCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SeeAlsoCell(apod: Apod.example)
+//    }
+//}
