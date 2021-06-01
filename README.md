@@ -4,6 +4,17 @@ This application is meant to be used as A Picture A Day service. It is a WIP and
 
 More Features to come.
 
+## Technology Used
+
+- Swift
+- SwiftUI
+- Animations
+- URLSession
+- Codable Data
+- ObservedObjects
+- SDWebImageSwiftUI
+- Xcode 12.5
+
 ## Supported Platforms
 
 * iOS 13.0+
