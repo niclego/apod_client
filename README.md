@@ -5,7 +5,7 @@ This application is meant to be used as A Picture A Day service. It is a WIP and
 More Features to come.
 
 ## Screen Recordings
-![caption](https://media.giphy.com/media/zzng6ZCizEOKphLmLj/giphy.gif)
+![caption](demo/demo.gif)
 
 ## Technology Used
 
