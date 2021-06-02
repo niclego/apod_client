@@ -22,14 +22,9 @@ struct BackgroundImage: View {
             .animation(.linear(duration: 0.4))
             .background(backgroundColor)
             .ignoresSafeArea()
-//            .onAppear {
-//                print("hello")
-//                self.setAverageColor()
-//            }
             .onChange(of: apodObj.apod.url) { _ in
-                if !apodObj.imageIsExpanded {
-                    self.setAverageColor()
-                }
+                print("here")
+                self.setAverageColor()
             }
 
     }
