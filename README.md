@@ -1,6 +1,6 @@
 # apod_client
 
-This application is meant to be used as A Picture A Day service. It is a WIP and only works with the NASA APOD api.
+This application is A Picture A Day service. It is a WIP and only works with the NASA APOD api.
 
 More Features to come.
 
