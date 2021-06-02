@@ -5,7 +5,7 @@ This application is meant to be used as A Picture A Day service. It is a WIP and
 More Features to come.
 
 ## Screen Recordings
-![Apod Client Demo](demo/1.png=250x)
+![Apod Client Demo](demo/1.png =250x)
 
 
 ## Technology Used
