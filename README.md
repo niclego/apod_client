@@ -5,7 +5,7 @@ This application is meant to be used as A Picture A Day service. It is a WIP and
 More Features to come.
 
 ## Screen Recordings
-![](demo/1.png height=100)
+![](demo/1.png | height=100)
 
 
 ## Technology Used
