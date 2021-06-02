@@ -5,7 +5,7 @@ This application is meant to be used as A Picture A Day service. It is a WIP and
 More Features to come.
 
 ## Screenshots
-<img src="demo/1.png" width="200"> <img src="demo/2.png" width="200"> <img src="demo/3.png" width="200"> <img src="demo/4.png" width="200" style="border-radius:50%">
+<img src="demo/1.png" width="200"> <img src="demo/2.png" width="200"> <img src="demo/3.png" width="200"> <img src="demo/4.png" width="200">
 
 
 ## Technology Used
