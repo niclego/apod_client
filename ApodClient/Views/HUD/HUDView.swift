@@ -13,7 +13,6 @@ struct HUDView: View {
     var body: some View {
         VStack {
             if (!apodObj.showExplanation) {
-                TopNavigationView(feedView: $apodObj.feedView)
                 MagnificationButtonView(imageIsExpanded: $apodObj.imageIsExpanded)
             }
             
@@ -26,9 +25,3 @@ struct HUDView: View {
         }
     }
 }
-
-//struct HUDView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HUDView(feedView: <#T##Binding<Bool>#>)
-//    }
-//}

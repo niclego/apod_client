@@ -36,9 +36,3 @@ struct ExplanationView: View {
         }
     }
 }
-
-//struct DescriptionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DescriptionView()
-//    }
-//}

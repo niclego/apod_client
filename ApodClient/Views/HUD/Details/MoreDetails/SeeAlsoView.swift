@@ -47,7 +47,6 @@ struct SeeAlsoView: View {
     
     func runSearch(criteria: Date) {
         request?.cancel()
-        print(criteria)
         let formatter1 = DateFormatter()
         formatter1.dateFormat = "yyyy-MM-dd"
         
@@ -58,9 +57,3 @@ struct SeeAlsoView: View {
         }
     }
 }
-
-//struct LikedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SeeAlsoView(date: "2021-05")
-//    }
-//}

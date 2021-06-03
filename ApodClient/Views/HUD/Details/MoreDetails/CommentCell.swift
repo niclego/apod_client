@@ -43,9 +43,3 @@ struct CommentCell: View {
             .frame(maxWidth: .infinity, maxHeight: 1)
     }
 }
-
-struct CommentCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentCell(comment: Comment.example)
-    }
-}

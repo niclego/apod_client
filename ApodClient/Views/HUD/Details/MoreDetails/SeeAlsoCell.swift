@@ -38,18 +38,9 @@ struct SeeAlsoCell: View {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             let date = dateFormatter.date(from: apod.id)
             selectedDate = date ?? Date()
-            withAnimation {
-                showExplanation = false
-            }
         }, label: {
             posterImage
         })
     }
     
 }
-
-//struct SeeAlsoCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SeeAlsoCell(apod: Apod.example)
-//    }
-//}

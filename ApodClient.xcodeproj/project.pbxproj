@@ -81,9 +81,10 @@
 		825B789C26576F8B00D5E30F /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				822290242655880800D3BB03 /* HUDView.swift */,
+				82229026265588B100D3BB03 /* MagnificationButtonView.swift */,
 				827673E0264F38C800DC816A /* TopNavigation */,
 				825B789E2657702500D5E30F /* Details */,
-				825B789D26576FD000D5E30F /* MoreDetails */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -104,6 +105,7 @@
 		825B789E2657702500D5E30F /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				825B789D26576FD000D5E30F /* MoreDetails */,
 				827673D6264F285F00DC816A /* DetailsView.swift */,
 				827673D4264F269400DC816A /* ActionButtonsView.swift */,
 				827673CB264F1DE100DC816A /* ActionButton.swift */,
@@ -115,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				825B789C26576F8B00D5E30F /* HUD */,
-				82229026265588B100D3BB03 /* MagnificationButtonView.swift */,
-				822290242655880800D3BB03 /* HUDView.swift */,
 				827673E3264F3B2F00DC816A /* Feed */,
 				8234DCAE2654AEF7009B882F /* Liked */,
 			);

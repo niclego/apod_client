@@ -13,7 +13,6 @@ struct ActionButtonsView: View {
     var body: some View {
         VStack {
             ActionButton(systemName: "heart") {
-                print("hello")
             }
             ActionButton(systemName: "ellipsis.bubble", onPress: onCommentsPress)
         }

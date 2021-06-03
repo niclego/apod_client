@@ -34,9 +34,3 @@ struct MagnificationButtonView: View {
         .transition(.move(edge: .trailing))
     }
 }
-
-//struct MagnificationButtonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MagnificationButtonView()
-//    }
-//}

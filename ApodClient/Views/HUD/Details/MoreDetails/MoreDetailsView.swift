@@ -57,8 +57,6 @@ struct MoreDetailsView: View {
                 .padding(.horizontal, 17)
             }
 
-            
-
             if !apodObj.showComments {
                 ExplanationView(apodObj: apodObj)
             } else {

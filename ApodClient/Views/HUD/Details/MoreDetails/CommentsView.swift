@@ -16,6 +16,7 @@ struct CommentsView: View {
     @State var commentText = ""
     @State var value: CGFloat = 0
     @State var scrollDown = false
+    @State var loading = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -27,7 +28,6 @@ struct CommentsView: View {
                                 .id(item.id)
                         }
                         .onChange(of: scrollDown, perform: { s in
-                            print("scroll")
                             withAnimation {
                                 scrollTo(with: scrollView)
                             }
@@ -36,8 +36,13 @@ struct CommentsView: View {
                             scrollTo(with: scrollView)
                         }
                     } else {
-                        Text("There are no comments yet.")
-                            .font(.footnote)
+                        if loading {
+                            Text("Loading...")
+                                .font(.footnote)
+                        } else {
+                            Text("There are no comments yet.")
+                                .font(.footnote)
+                        }
                     }
                 }
             }
@@ -92,16 +97,17 @@ struct CommentsView: View {
     
     func fetchComments(criteria: Date) {
         request?.cancel()
-        print("fetching...")
+        loading = true
         
         let formatter1 = DateFormatter()
         formatter1.dateFormat = "yyyy-MM-dd"
         
         let path = "comments/NASA/" + formatter1.string(from: criteria)
         
-        request = URLSession.shared.get(path: path, queryItems: [:], defaultValue: CommentSearchResults(items: [])) { items in
+        request = URLSession.shared.get(path: path, queryItems: [:], defaultValue: searchResults) { items in
             searchResults = items
             scrollDown.toggle()
+            loading = false
         }
     }
     
@@ -123,8 +129,3 @@ extension View {
 }
 #endif
 
-//struct CommentsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommentsView(typeDate: "NASA#2021-05-07")
-//    }
-//}
