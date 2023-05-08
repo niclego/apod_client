@@ -4,6 +4,8 @@ This application is A Picture A Day service. It is a WIP and only has one input 
 
 More Features to come.
 
+Powered by my javascript/node/serverless/dynamodb api: https://github.com/niclego/apod_api
+
 ## Screenshots
 <img src="demo/1.png" width="200"> <img src="demo/2.png" width="200"> <img src="demo/3.png" width="200"> <img src="demo/4.png" width="200">
 
